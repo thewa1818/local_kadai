@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.bmi {
+  padding: 20px;
+  width: 800px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+}
+
