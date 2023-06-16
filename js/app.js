@@ -11,12 +11,19 @@ $("#btn").on("click",function(){
   console.log(bmi);
   console.log(d);
 
-  $("#bmi_total").html(`あなたのBMIは${bmi}です`);
+  $(".bmi_total").fadeIn();
+
+  $("#bmi_kekka").text(bmi);
 
  localStorage.setItem(d,bmi);
+
+ 
 
 })
 
 $("#btn2").on("click",function(){
-  
-})
+  localStorage.clear();
+  $("#weight,#tall,#day").val("");
+  $(".bmi_total").toggle();
+});
+

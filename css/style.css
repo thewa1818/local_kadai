@@ -19,3 +19,7 @@ button {
   width: 150px;
 }
 
+.bmi_total{
+  display: none;
+}
+
