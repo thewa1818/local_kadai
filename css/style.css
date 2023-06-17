@@ -21,5 +21,19 @@ button {
 
 .bmi_total{
   display: none;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+#list{
+  width: 400px;
+  margin-top: 30px;
+}
+
+tr {
+ display: block;
+ padding: 20px;
+ margin: 10px;
+ border: 1px solid #000;
 }
 

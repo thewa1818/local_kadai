@@ -17,13 +17,19 @@ $("#btn").on("click",function(){
 
  localStorage.setItem(d,bmi);
 
- 
+ const html = `
+<tr>
+    <th>日付${d}の</th>
+    <td>BMIは${bmi}です。</td>
+</tr>`
+
+$("#list").append(html); 
 
 })
 
 $("#btn2").on("click",function(){
   localStorage.clear();
   $("#weight,#tall,#day").val("");
-  $(".bmi_total").toggle();
+  $(".bmi_total").hide();
 });
 
