@@ -28,8 +28,12 @@ $("#list").append(html);
 })
 
 $("#btn2").on("click",function(){
-  localStorage.clear();
   $("#weight,#tall,#day").val("");
   $(".bmi_total").hide();
 });
 
+$("#btn3").on("click",function(){
+  localStorage.clear();
+  $("#list").remove();
+  $(".bmi_total").remove();
+});
