@@ -12,6 +12,7 @@ $("#btn").on("click",function(){
   console.log(bmi);
   console.log(d);
 
+
   $(".bmi_total").fadeIn();
 
   $("#bmi_text").fadeIn();
@@ -46,6 +47,7 @@ $("#btn").on("click",function(){
 </tr>`
 
 $("#list").prepend(html);
+$("#list").show(html);
 
 if(d===""){
   alert("日付を記入してね");
@@ -64,8 +66,11 @@ $("#btn2").on("click",function(){
 
 $("#btn3").on("click",function(){
   localStorage.clear();
-  $("#list").hide();
+  $("#list").empty();
   $(".bmi_total").hide();
   $("#bmi_text").hide();
   $("#weight,#tall,#day").val("");
 });
+
+
+  
