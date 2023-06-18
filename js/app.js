@@ -6,6 +6,7 @@ $("#btn").on("click",function(){
   let bmi =Math.round(w / ((h/100)*(h/100))) ;
   let d = $("#day").val();
 
+
   console.log(w);
   console.log(h);
   console.log(bmi);
@@ -44,7 +45,14 @@ $("#btn").on("click",function(){
     <td>BMIは${bmi}です。</td>
 </tr>`
 
-$("#list").append(html); 
+$("#list").prepend(html);
+
+if(d===""){
+  alert("日付を記入してね");
+}else if(w===""){
+  alert("体重を記入してね");
+}else if(h===""){
+  alert("身長を記入してね");}
 
 })
 
@@ -59,4 +67,5 @@ $("#btn3").on("click",function(){
   $("#list").hide();
   $(".bmi_total").hide();
   $("#bmi_text").hide();
+  $("#weight,#tall,#day").val("");
 });
