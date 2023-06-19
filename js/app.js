@@ -19,6 +19,8 @@ $("#btn").on("click",function(){
 
   $("#bmi_kekka").text(bmi);
 
+  $("#bmi_click").fadeIn();
+
  localStorage.setItem(d,bmi);
 
  const level = ["痩せすぎだよ","適正体重！","ぽっちゃりさん","もう食うなデブ！"]
@@ -38,16 +40,48 @@ $("#btn").on("click",function(){
   console.log(level[3]);
   $("#bmi_text").text("もう食うなデブ！");}
 
-
-
  const html = `
 <tr>
-    <th>日付${d}の</th>
+    <th>${d}の</th>
     <td>BMIは${bmi}です。</td>
 </tr>`
 
 $("#list").prepend(html);
 $("#list").show(html);
+
+
+
+
+
+  $("#bmi_click").on("click",function(){
+
+    if(bmi<=19){
+      $(".diet_yase").fadeIn();
+    }else if(bmi < 25 && bmi >=19){
+      $(".diet_tekisei").fadeIn();
+    }else if(bmi < 35 && bmi >=25){
+      $(".diet_pocha").fadeIn();
+    }else{
+      $(".diet_debu").fadeIn();
+    }
+
+    $(".diet_close").on("click",function(){
+      $(".diet_yase").fadeOut();
+      $(".diet_tekisei").fadeOut();
+      $(".diet_pocha").fadeOut();
+      $(".diet_debu").fadeOut();
+    })
+    
+  })
+
+  $("#btn2").on("click",function(){
+    $("#weight,#tall,#day").val("");
+    $(".bmi_total").hide();
+    $("#bmi_text").hide();
+    $("#bmi_click").hide();
+  });
+
+
 
 if(d===""){
   alert("日付を記入してね");
@@ -58,11 +92,9 @@ if(d===""){
 
 })
 
-$("#btn2").on("click",function(){
-  $("#weight,#tall,#day").val("");
-  $(".bmi_total").hide();
-  $("#bmi_text").hide();
-});
+
+
+
 
 $("#btn3").on("click",function(){
   localStorage.clear();
@@ -70,7 +102,8 @@ $("#btn3").on("click",function(){
   $(".bmi_total").hide();
   $("#bmi_text").hide();
   $("#weight,#tall,#day").val("");
+  $("#bmi_click").hide();
 });
 
 
-  
+
