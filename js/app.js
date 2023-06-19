@@ -22,6 +22,9 @@ $("#btn").on("click",function(){
   $("#bmi_click").fadeIn();
 
  localStorage.setItem(d,bmi);
+ console.log(localStorage.getItem(d),"BMI値"
+ );
+ 
 
  const level = ["痩せすぎだよ","適正体重！","ぽっちゃりさん","もう食うなデブ！"]
 
@@ -51,10 +54,9 @@ $("#list").show(html);
 
 
 
-
-
   $("#bmi_click").on("click",function(){
 
+    //最後までいくともう最初の結果が出てこない
     if(bmi<=19){
       $(".diet_yase").fadeIn();
     }else if(bmi < 25 && bmi >=19){
@@ -71,6 +73,8 @@ $("#list").show(html);
       $(".diet_pocha").fadeOut();
       $(".diet_debu").fadeOut();
     })
+
+
     
   })
 
@@ -81,8 +85,7 @@ $("#list").show(html);
     $("#bmi_click").hide();
   });
 
-
-
+//色んなものが表示されてしまう
 if(d===""){
   alert("日付を記入してね");
 }else if(w===""){
@@ -91,8 +94,6 @@ if(d===""){
   alert("身長を記入してね");}
 
 })
-
-
 
 
 
